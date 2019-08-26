@@ -59,7 +59,6 @@ $(function () {
     const el = $(evt.currentTarget);
     el.toggleClass('active').removeClass('sure-not');
     result[el.data('row')][el.data('col')] = !result[el.data('row')][el.data('col')];
-    console.log(result);
     checkSolution();
   }
 
@@ -67,7 +66,6 @@ $(function () {
     const el = $(evt.currentTarget);
     el.toggleClass('sure-not').removeClass('active');
     result[el.data('row')][el.data('col')] = false;
-    console.log(result);
   }
 
 
