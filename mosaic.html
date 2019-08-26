@@ -1,0 +1,50 @@
+<style>
+    .cell {
+        width: 30px;
+        margin: 0;
+        padding: 0;
+        height: 30px;
+        border: lightgray dotted 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-family: sans-serif;
+        color: lightgray;
+        background: black;
+    }
+
+    .cell.active {
+        background: white;
+        color: black;
+    }
+
+    .cell.sure-not {
+        background: gray;
+    }
+
+    .cell span {
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    #board {
+        display: grid;
+    }
+
+    .success {
+        color: green;
+    }
+
+</style>
+<div>
+    <h2>Ułóż mozaikę</h2>
+    <p>Kliknij lewym żeby zaznaczyć, że jest</p>
+    <p>Kliknij prawym żeby zaznaczyć, że nie ma</p>
+    <div id="board"></div>
+    <div id="status" style="height: 12px; font-size: 12px; margin: 16px 0;"></div>
+    <button id="next" disabled>Następny</button>
+</div>

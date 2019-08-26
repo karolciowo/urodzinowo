@@ -2,6 +2,7 @@ $(function () {
   const root = $('#root');
 
   const pages = [
+    'mosaic',
     'password',
     'index'
   ];
