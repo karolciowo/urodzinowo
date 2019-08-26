@@ -4,7 +4,7 @@ $(function () {
   const pages = [
     'password',
     'mosaic',
-    'index'
+    'grand-finale'
   ];
 
   let currentPage = -1;
