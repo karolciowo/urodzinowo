@@ -3,7 +3,7 @@ $(function () {
     [0,1,2,2,2,2,2,1,0],
     [1,3,5,5,5,5,5,3,1],
     [2,5,8,8,8,8,8,5,2],
-    [2,5,8,9,9,9,8,5,1],
+    [2,5,8,9,9,9,8,5,2],
     [1,3,6,8,9,8,6,3,1],
     [0,1,3,6,7,6,3,1,0],
     [0,0,1,3,4,3,1,0,0],
@@ -26,11 +26,9 @@ $(function () {
 
   const columns = boardHints[0].length;
   const board = $("#board");
-  const next = $("#next");
-  next.click(progress);
 
   board.css('grid-template-columns', '1fr '.repeat(columns));
-  board.css('width', `${columns * 30}px`);
+  board.css('width', `${columns * 30 + columns * 2}px`);
   boardHints.forEach((row, rowIdx) => {
     result.push([]);
     row.forEach((cell, cellIdx) => {
@@ -52,7 +50,7 @@ $(function () {
 
     cells.unbind('click', 'contextmenu');
     $('#status').html("<p class='success'>Mozajka poprawna!</p>");
-    next.prop('disabled', false);
+    success();
   }
 
   function toggleCellActive(evt) {
