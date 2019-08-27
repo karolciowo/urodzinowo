@@ -6,7 +6,7 @@ $(function () {
   const next = $("#next");
 
   const pageMosaic = {
-    script: '/mosaic.js',
+    script: 'mosaic.js',
     header: 'Ułóż mozaikę',
     help: "<p>Kliknij lewym żeby zaznaczyć, że jest</p>" +
       "<p>Kliknij prawym żeby zaznaczyć, że nie ma</p>",
@@ -17,7 +17,7 @@ $(function () {
   };
 
   const pagePassword = {
-    script: '/password.js',
+    script: 'password.js',
     header: 'Podaj PIN ',
     help: "",
     render: function (then) {
@@ -41,7 +41,7 @@ $(function () {
     render: function (then) {
       root.children().fadeToggle(1000, function () {
         next.remove();
-        root.append("<img src='/zdjecie.png' alt='Szymus' width='288', height='256'>");
+        root.append("<img src='zdjecie.png' alt='Szymus' width='288', height='256'>");
         then();
       });
 
