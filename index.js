@@ -22,10 +22,10 @@ $(function () {
     help: "",
     render: function (then) {
       $('<div id="password"><form id="pin-form">\n' +
-        '        <input id="pin-1" type="number" min="0" max="9" step="1" value="0">\n' +
-        '        <input id="pin-2" type="number" min="0" max="9" step="1" value="0">\n' +
-        '        <input id="pin-3" type="number" min="0" max="9" step="1" value="0">\n' +
-        '        <input id="pin-4" type="number" min="0" max="9" step="1" value="0">\n' +
+        '        <input id="pin-1" type="text" min="0" max="9" step="1" value="0" inputmode="numeric" pattern="[0-9]">\n' +
+        '        <input id="pin-2" type="text" min="0" max="9" step="1" value="0" inputmode="numeric" pattern="[0-9]">\n' +
+        '        <input id="pin-3" type="text" min="0" max="9" step="1" value="0" inputmode="numeric" pattern="[0-9]">\n' +
+        '        <input id="pin-4" type="text" min="0" max="9" step="1" value="0" inputmode="numeric" pattern="[0-9]">\n' +
         '        <button type="submit">Unlock</button>\n' +
         '    </form></div>').hide().appendTo(root);
       root.children().fadeToggle(1000, function () {
@@ -37,11 +37,9 @@ $(function () {
 
   const pageGrandFinale = {
     header: "Wszystkiego najlepszego!",
-    help: "",
+    help: "<span>Spotkajmy się o 16:00 na rynku</span>",
     render: function (then) {
-      console.log("render");
       root.children().fadeToggle(1000, function () {
-      console.log("fade");
         next.remove();
         root.append("<img src='/zdjecie.png' alt='Szymus' width='288', height='256'>");
         then();
@@ -62,8 +60,8 @@ $(function () {
     if (!page) return;
     header.css('visibility', 'hidden');
     help.css('visibility', 'hidden');
-    status.css('visibility', 'hidden');
-    next.prop('disabled', true);
+    status.children().remove();
+    // next.prop('disabled', true);
     page.render(function () {
       if (page.script) {
         $.getScript(page.script)

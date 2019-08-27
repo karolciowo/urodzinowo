@@ -1,8 +1,11 @@
 $(function () {
   const expectedPinHash = 'E0C7BFA5B8E4AE0CECFC1F14093A71E05C27ABD93A3850FC35F008C3BAF866B4';
 
-  $("input[type='number']").keypress(function (evt) {
+  $("#password input").on('input', function (evt) {
     evt.preventDefault();
+    if (!isNaN(evt.originalEvent.data)) {
+      $(this).val(evt.originalEvent.data);
+    }
   });
 
   const status = $("#status");
