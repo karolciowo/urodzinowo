@@ -41,7 +41,7 @@ $(function () {
     render: function (then) {
       root.children().fadeToggle(1000, function () {
         next.remove();
-        root.append("<img src='zdjecie.png' alt='Szymus' width='288', height='256'>");
+        root.append("<img src='zdjecie.png' alt='Szymus'>");
         then();
       });
 
