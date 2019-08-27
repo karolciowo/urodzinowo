@@ -61,7 +61,7 @@ $(function () {
     header.css('visibility', 'hidden');
     help.css('visibility', 'hidden');
     status.children().remove();
-    // next.prop('disabled', true);
+    next.prop('disabled', true);
     page.render(function () {
       if (page.script) {
         $.getScript(page.script)
